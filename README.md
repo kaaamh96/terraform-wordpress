@@ -1,4 +1,3 @@
-
 # AWS Custom VPC & WordPress Infrastructure with Terraform
 
 A hands-on Infrastructure as Code (IaC) project demonstrating how to design and provision a custom, production-ready AWS network architecture from scratch and deploy a WordPress instance using Terraform.
@@ -70,11 +69,12 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 
 ```text
 .
-├── main.tf          # Core infrastructure definitions (VPC, Subnets, EC2, Security Groups)
-├── variables.tf     # Input variables for customization (Regions, CIDR blocks, Instance types)
-├── outputs.tf       # Exported values (Public IP, VPC ID, Subnet IDs)
-├── providers.tf     # AWS Provider setup and version locking
-└── README.md        # Project documentation
+├── main.tf                  # Core infrastructure definitions (VPC, Subnets, EC2, Security Groups)
+├── variables.tf             # Input variable declarations
+├── terraform.tfvars.example # Example variable values template for users
+├── outputs.tf               # Exported values (Public IP, VPC ID, Subnet IDs)
+├── providers.tf             # AWS Provider setup and version locking
+└── README.md                # Project documentation
 ```
 
 ---
@@ -91,26 +91,33 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/kaaamh96/terraform-wordpress.git
+   git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
    cd YOUR-REPO-NAME
    ```
 
-2. **Initialize Terraform:**
+2. **Configure environment variables:**
+   Copy the template file to create your local variables configuration:
+   ```bash
+   cp terraform.tfvars.example terraform.tfvars
+   ```
+   *Edit `terraform.tfvars` with your text editor to input your custom configuration values (such as SSH key names and region preferences).*
+
+3. **Initialize Terraform:**
    ```bash
    terraform init
    ```
 
-3. **Preview resources to be created:**
+4. **Preview resources to be created:**
    ```bash
    terraform plan
    ```
 
-4. **Provision the infrastructure:**
+5. **Provision the infrastructure:**
    ```bash
    terraform apply
    ```
 
-5. **Access WordPress:**
+6. **Access WordPress:**
    Copy the `wordpress_public_ip` output and navigate to it in your web browser:
    ```text
    http://<YOUR_EC2_PUBLIC_IP>
