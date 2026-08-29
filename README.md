@@ -6,42 +6,8 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 
 ## Architecture Overview
 
-```text
-                               +-------------------------------------------------+
-                               |                   AWS Cloud                     |
-                               |                                                 |
-                               |   +-----------------------------------------+   |
-                               |   |              Custom VPC                 |   |
-                               |   |                                         |   |
-  +------------------+         |   |   +---------------------------------+   |   |
-  |   User / Client  | --------|---|-->|        Internet Gateway         |   |   |
-  +------------------+         |   |   +---------------------------------+   |   |
-                               |   |                    |                    |   |
-                               |   |             +--------------+            |   |
-                               |   |             | Route Table  |            |   |
-                               |   |             +--------------+            |   |
-                               |   |                    |                    |   |
-                               |   |   +---------------------------------+   |   |
-                               |   |   |          Public Subnet          |   |   |
-                               |   |   |                                 |   |   |
-                               |   |   |   +-------------------------+   |   |   |
-                               |   |   |   |     Security Group      |   |   |   |
-                               |   |   |   |                         |   |   |   |
-                               |   |   |   |   +-----------------+   |   |   |   |
-                               |   |   |   |   |  EC2 Instance   |   |   |   |   |
-                               |   |   |   |   |  (WordPress +   |   |   |   |   |
-                               |   |   |   |   |   Apache/MySQL) |   |   |   |   |
-                               |   |   |   |   +-----------------+   |   |   |   |
-                               |   |   |   +-------------------------+   |   |   |
-                               |   |   +---------------------------------+   |   |
-                               |   |                    |                    |   |
-                               |   |   +---------------------------------+   |   |
-                               |   |   |         Private Subnet          |   |   |
-                               |   |   |   (Isolated for future DB/App)  |   |   |
-                               |   |   +---------------------------------+   |   |
-                               |   +-----------------------------------------+   |
-                               +-------------------------------------------------+
-```
+<img width="663" height="641" alt="diagram" src="https://github.com/user-attachments/assets/b7005e62-bac7-4001-9679-b0046ac639cd" />
+
 
 ---
 
@@ -129,6 +95,48 @@ To avoid unnecessary AWS charges, tear down all created resources:
 ```bash
 terraform destroy
 ```
+
+
+## Screenshots
+
+
+### Terraform plan
+
+This image shows the terraform plan to add the resources.
+
+<img width="453" height="107" alt="Screenshot 2026-08-26 at 02 27 05" src="https://github.com/user-attachments/assets/ad3316b0-aa9d-40d9-b380-06d57537d734" />
+
+
+
+
+
+
+
+
+### Resources being created
+
+This image shows resources being created
+
+
+<img width="858" height="290" alt="Screenshot 2026-08-26 at 02 27 38" src="https://github.com/user-attachments/assets/e60ab9d4-6da5-403a-9636-7292256b9fa2" />
+
+
+
+### Custom VPC on AWS
+
+This image shows the custom vpc on aws console
+
+<img width="1503" height="408" alt="Screenshot 2026-08-26 at 02 38 52" src="https://github.com/user-attachments/assets/4b84fea9-333f-4b9d-8f15-5da8228ce295" />
+
+
+
+### Wordpress on Browser
+
+This image shows the Wordpress functional on the browser
+
+
+<img width="1404" height="996" alt="Screenshot 2026-08-26 at 02 37 46" src="https://github.com/user-attachments/assets/d6dedde8-8bf4-4fa9-bc0a-0ad7cba62a33" />
+
 
 
 
