@@ -19,6 +19,7 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 - **Network Security:** Defined AWS Security Groups as stateful firewalls to expose only required ports (HTTP `80`, SSH `22`).
 - **Application Deployment:** Provisioned an AWS EC2 instance bootstrap-configured to run a WordPress web stack.
 - **Automated Infrastructure:** Entire setup managed, provisioned, and destroyed using standard Terraform declarative workflows.
+- The private subnet is to demonstrate private networking and outbound routing, ready for future private resource.
 
 ---
 
