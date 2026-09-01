@@ -147,6 +147,21 @@ resource "aws_security_group" "wordpress_sg" {
   }
 }
 
+resource "aws_security_group" "private_sg" {
+
+  name = "private_sg"
+
+  vpc_id = aws_vpc.customvpc.id
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+
 
 
 ## ec2 instance
@@ -173,6 +188,17 @@ resource "aws_instance" "wordpress_instance" {
   }
 
 
+}
+
+resource "aws_instance" "private_instance" {
+  ami = "ami-01a47a61359451e7d"
+  instance_type = var.instance_type
+  
+  subnet_id = aws_subnet.private_subnet.id
+  vpc_security_group_ids = [aws_security_group.private_sg.id]
+  tags = {
+    Name = "private_instance"
+  }
 }
 
 
