@@ -6,7 +6,9 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 
 ## Architecture Overview
 
-<img width="663" height="641" alt="diagram" src="https://github.com/user-attachments/assets/b7005e62-bac7-4001-9679-b0046ac639cd" />
+<img width="1133" height="930" alt="diagram" src="https://github.com/user-attachments/assets/87470209-93ad-480a-93cd-883e6fd2cf25" />
+
+
 
 
 ---
@@ -14,12 +16,13 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 ## What I Built
 
 - **Custom AWS VPC:** Designed a dedicated Virtual Private Cloud with custom CIDR block allocations.
-- **Subnetting Strategy:** Segmented public and private subnets across Availability Zones for traffic isolation.
+- **Subnetting Strategy:** Segmented public and private subnets within VPC for Network Isolation
 - **Internet Access & Routing:** Configured an Internet Gateway (IGW) and custom Route Tables to control network routing.
-- **Network Security:** Defined AWS Security Groups as stateful firewalls to expose only required ports (HTTP `80`, SSH `22`).
+- **Network Security:** Defined AWS Security Groups as stateful firewalls to expose only required ports (HTTPS `433` HTTP `80`, SSH `22`).
+- **Private Compute Environment:** Deployed a private EC2 instance without a public IP to demonstrate workload isolation within a private subnet. Outbound internet access is routed securely through a NAT Gateway, while direct inbound access from the internet is restricted.
 - **Application Deployment:** Provisioned an AWS EC2 instance bootstrap-configured to run a WordPress web stack.
 - **Automated Infrastructure:** Entire setup managed, provisioned, and destroyed using standard Terraform declarative workflows.
-- The private subnet is to demonstrate private networking and outbound routing, ready for future private resource.
+  
 
 ---
 
@@ -105,7 +108,8 @@ terraform destroy
 
 This image shows the terraform plan to add the resources.
 
-<img width="453" height="107" alt="Screenshot 2026-08-26 at 02 27 05" src="https://github.com/user-attachments/assets/ad3316b0-aa9d-40d9-b380-06d57537d734" />
+<img width="681" height="223" alt="resources to add" src="https://github.com/user-attachments/assets/1f9951f5-a5e3-4773-aa5f-7f1bd6144a49" />
+
 
 
 
