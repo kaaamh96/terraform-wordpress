@@ -6,7 +6,9 @@ A hands-on Infrastructure as Code (IaC) project demonstrating how to design and 
 
 ## Architecture Overview
 
-<img width="1133" height="930" alt="diagram" src="https://github.com/user-attachments/assets/87470209-93ad-480a-93cd-883e6fd2cf25" />
+<img width="706" height="641" alt="DIAGRAM" src="https://github.com/user-attachments/assets/795af4dd-6978-47b3-865c-9d5e3298455a" />
+
+
 
 
 
